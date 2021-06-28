@@ -16,7 +16,7 @@ public class IncrementController {
 
     @GetMapping("/increment")
     public Increment Increment(@RequestParam(value = "name", defaultValue = "World") String name) throws InterruptedException {
-        long rnd= Utils.random(2000);
+        long rnd= Utils.random(1000,2000);
         Thread.sleep(rnd);
         return new Increment(counter.incrementAndGet(), String.format(template, name));
     }
