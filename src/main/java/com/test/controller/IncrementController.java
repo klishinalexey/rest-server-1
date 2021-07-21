@@ -23,7 +23,7 @@ public class IncrementController {
 
     @GetMapping("/decrement")
     public Increment decrement(@RequestParam(value = "name", defaultValue = "World") String name) throws InterruptedException {
-        long rnd = Utils.random(1000, 2000);
+        long rnd = Utils.random(1000, 3000);
         Thread.sleep(rnd);
         Increment increment = new Increment(counter.decrementAndGet(), String.format(template, name));
         return increment;
